@@ -184,7 +184,8 @@ class RepositoriesTags extends BaseRepository implements TagsInterface
         #end
 
         #update
-        $result = $this->update($data, $id);
+        $this->update($data, $id);
+        $result = $this->find($id);
 
         return $this->success("successfully edit tag", $result);
 
